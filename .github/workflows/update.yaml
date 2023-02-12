@@ -22,7 +22,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
             token: ${{ secrets.PAT }}
-            commit-message: Update progress
-            body: "Update progress check-in"
-            title: Update progress
-            branch: update-progress
+            commit-message: PR Data Commit
+            body: "PR Data Commit"
+            title: pr-test
+            branch: pr-test
