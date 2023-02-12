@@ -13,11 +13,6 @@ jobs:
         with: 
           fetch-depth: 0
 
-      - name: setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3'
-          
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
