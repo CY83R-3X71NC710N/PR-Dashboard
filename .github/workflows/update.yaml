@@ -1,4 +1,4 @@
-name: pull-request-test
+name: achievement-collector
 
 on:
   schedule:
@@ -12,12 +12,12 @@ jobs:
         uses: actions/checkout@v3
         with: 
           fetch-depth: 0
-
+          
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
             token: ${{ secrets.PAT }}
-            commit-message: PR Data Commit
-            body: "PR Data Commit"
-            title: pr-test
-            branch: pr-test
+            commit-message: Update progress
+            body: "Update progress check-in"
+            title: Update progress
+            branch: update-progress
