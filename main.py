@@ -18,9 +18,9 @@ def get_pull_request_data(pull_request):
     date_opened = pull_request['created_at']
     date_closed = pull_request['closed_at']
     user_opened = pull_request['user']['login']
-    user_closed = pull_request['closed_by']['login'] if pull_request['closed_by'] else None
+    user_closed = pull_request.get('closed_by', {}).get('login', None)
     status = pull_request['state']
-    comments = pull_request['comments']
+    comments = pull_request.get('comments', 0)
     files_changed = pull_request['changed_files']
     return (pr_number, date_opened, date_closed, user_opened, user_closed, status, comments, files_changed)
 
