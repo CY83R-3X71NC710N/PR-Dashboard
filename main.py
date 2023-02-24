@@ -10,7 +10,7 @@ try:
 				img = "![goal](PR.png)"
 			elif num in range(128):
 				img = "![goal](PR.png)"
-			elif num in range(1024):
+			elif num in range(9999):
 				img = "![goal](PR.png)"
 			else:
 				img = "![goal](PR.png)"
