@@ -13,11 +13,19 @@ jobs:
         with: 
           fetch-depth: 0
 
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3'
+        
+      - name: execute py script 
+        run: python main.py
+          
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:
             token: ${{ secrets.PAT }}
-            commit-message: PR Data Commit
-            body: "PR Data Commit"
-            title: pr-test
+            commit-message: PR Test Commit For Dashboard
+            body: "PR Test Commit For Dashboard"
+            title: PR Test Commit For Dashboard
             branch: pr-test
