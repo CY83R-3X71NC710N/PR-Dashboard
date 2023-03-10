@@ -1,1 +1,1 @@
-1310 pull requests merged<br>Currently:<br>![goal](PR.png)
+1311 pull requests merged<br>Currently:<br>![goal](PR.png)
