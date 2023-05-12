@@ -28,6 +28,7 @@
         <th>Title</th>
         <th>Author</th>
         <th>Created</th>
+        <th>Status</th>
         <th>URL</th>
       </tr>
     </thead>
@@ -38,8 +39,8 @@
     const repoOwner = 'CY83R-3X71NC710N'; // Replace with the repository owner
     const repoName = 'PR-Dashboard'; // Replace with the repository name
 
-    // Fetch pull requests from the GitHub API
-    fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/pulls`)
+    // Fetch pull requests (both open and closed) from the GitHub API
+    fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/pulls?state=all`)
       .then(response => response.json())
       .then(pullRequests => {
         const tableBody = document.querySelector('#pullRequestsTable tbody');
@@ -52,6 +53,7 @@
             <td>${pullRequest.title}</td>
             <td>${pullRequest.user.login}</td>
             <td>${new Date(pullRequest.created_at).toLocaleString()}</td>
+            <td>${pullRequest.state}</td>
             <td><a href="${pullRequest.html_url}" target="_blank">Link</a></td>
           `;
           tableBody.appendChild(row);
