@@ -3,6 +3,7 @@ name: pull-request-test
 on:
   schedule:
     - cron: '*/6 * * * *'
+  workflow_dispatch:
 jobs:
   block_update:
     runs-on: ubuntu-latest
